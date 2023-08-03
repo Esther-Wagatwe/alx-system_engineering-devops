@@ -1,2 +1,2 @@
 #!/bin/bash
-chown o+rwx hello
+chown 007 hello
