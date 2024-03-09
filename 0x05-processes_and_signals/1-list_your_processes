@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
-# Display a list of currently running processes
-
-# Command to show all processes, including those without a TTY
-# Show process hierarchy
-ps aux --forest
+# Displays a list of currently running processes.
+#   Shows all processes, for all users, including those without a TTY.
+#show process hierachy
+ps -auxf
