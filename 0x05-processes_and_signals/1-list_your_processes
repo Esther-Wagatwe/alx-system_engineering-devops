@@ -4,5 +4,4 @@
 
 # Command to show all processes, including those without a TTY
 # Show process hierarchy
-ps aux --forest
-
+ps -auxf
