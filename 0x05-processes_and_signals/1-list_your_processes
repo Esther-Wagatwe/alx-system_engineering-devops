@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Display a list of currently running processes
+
+# Command to show all processes, including those without a TTY
+# Show process hierarchy
+ps aux --forest
+
