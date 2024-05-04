@@ -1,5 +1,6 @@
-#include stdlib
 # Make changes to configuration file so as to connect to a server without typing a password
+
+include stdlib
 
 file_line { 'Turn off passwd auth':
   ensure => 'present',
