@@ -8,6 +8,6 @@ In this project, you will learn about firewalls
 * Configure ufw so that it blocks all incoming traffic, except the following TCP ports:22 (SSH), 443 (HTTPS SSL), 80 (HTTP)
 
 
-### [2. Port forwarding](./100-port_forwarding)
+### [1. Port forwarding](./100-port_forwarding)
 * Firewalls can not only filter requests, they can also forward them.
 * Configure web-01 so that its firewall redirects port 8080/TCP to port 80/TCP.
