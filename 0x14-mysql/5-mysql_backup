@@ -12,5 +12,3 @@ mysqldump -u root -p"$PASS" --all-databases > backup.sql
 CURRENT_DATE=$(date +%d-%m-%Y)
 FILE_NAME="$CURRENT_DATE.tar.gz"
 tar -czvf "$FILE_NAME" backup.sql
-
-rm backup.sql
