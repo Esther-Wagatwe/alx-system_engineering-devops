@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Accessing a REST API for todo lists of employees
-Export data in the JSON format."""
+Export data in the CSV format."""
 
 
 from requests import get
