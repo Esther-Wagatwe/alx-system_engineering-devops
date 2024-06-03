@@ -22,7 +22,7 @@ if __name__ == "__main__":
             done_tasks.append(task)
             total_tasks_done += 1
 
-    print("Employee {} is done with tasks({}/{})"
+    print("Employee {} is done with tasks({}/{}):"
           .format(user_name, total_tasks_done, len(tasks)))
 
     for task in done_tasks:
