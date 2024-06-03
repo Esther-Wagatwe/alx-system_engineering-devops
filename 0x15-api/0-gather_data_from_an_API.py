@@ -5,25 +5,26 @@ import requests
 import sys
 
 
-if __name__ == "__main__":
-    user_ID = int(sys.argv[1])
-    user_url = f'https://jsonplaceholder.typicode.com/users/{user_ID}'
-    user_response = requests.get(user_url)
-    user_name = user_response.json().get('name')
+if __name__ == '__main__':
+    employee_Id = sys.argv[1]
+    url = f'https://jsonplaceholder.typicode.com/users/{employee_Id}'
 
-    todos_url = f'https://jsonplaceholder.typicode.com/todos?userId={user_ID}'
-    todos_response = requests.get(todos_url)
-    tasks = todos_response.json()
-    total_tasks_done = 0
+    response = requests.get(url)
+    employee_name = response.json().get('name')
+
+    todo_Url = url + "/todos"
+    response = requests.get(todo_Url)
+    tasks = response.json()
+    completed_tasks = 0
     done_tasks = []
 
     for task in tasks:
         if task.get('completed'):
             done_tasks.append(task)
-            total_tasks_done += 1
+            completed_tasks += 1
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(user_name, total_tasks_done, len(tasks)))
+          .format(employee_name, completed_tasks, len(tasks)))
 
     for task in done_tasks:
         print("\t {}".format(task.get('title')))
