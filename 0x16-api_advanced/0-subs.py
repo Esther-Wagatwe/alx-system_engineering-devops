@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""function that queries the Reddit API and returns the number of subscribers
-(not active users, total subscribers) for a given subreddit."""
+"""module to querry a Reddit API."""
 from requests import get
 
 
 def number_of_subscribers(subreddit):
+    """queries the Reddit API
+    returns the number of subscribers for a given subreddit."""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    headers={"User-Agent": "My-User-Agent"}
+    headers = {"User-Agent": "My-User-Agent"}
     results = get(
         url,
         headers=headers,
