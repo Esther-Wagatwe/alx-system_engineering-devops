@@ -6,7 +6,7 @@ from requests import get
 def number_of_subscribers(subreddit):
     """queries the Reddit API
     returns the number of subscribers for a given subreddit."""
-       base_url = 'https://www.reddit.com/r/'
+    base_url = 'https://www.reddit.com/r/'
 
     url = '{}{}/about.json'.format(base_url, subreddit)
     headers = {
