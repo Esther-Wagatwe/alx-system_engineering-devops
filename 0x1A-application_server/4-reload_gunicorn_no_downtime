@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# This script sends a HUP signal to Gunicorn for a graceful reload
+# This script sends a HUP signal to Gunicorn for a graceful reload.
 
 pgrep -f gunicorn | xargs kill -HUP
