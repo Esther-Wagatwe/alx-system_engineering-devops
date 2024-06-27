@@ -1,33 +1,4 @@
 #!/usr/bin/env bash
 # This script sends a HUP signal to Gunicorn for a graceful reload
 
-# Path to Gunicorn PID file
-PIDFILE="/run/hbnb/hbnb.pid"
-
-# Function to reload Gunicorn
-reload_gunicorn() {
-    if [ -f $PIDFILE ]; then
-        # Read the PID from the file
-        PID=$(cat $PIDFILE)
-        
-        # Send the HUP signal to the master process
-        kill -HUP "$PID"
-        
-        echo "Sent HUP signal to Gunicorn (PID: $PID) for graceful reload"
-
-        # Wait briefly to allow workers to renew
-        sleep 5
-        
-        # Verify if Gunicorn is still running after reload
-        if ps -p "$PID" > /dev/null; then
-            echo "Gunicorn (PID: $PID) successfully reloaded."
-        else
-            echo "Failed to reload Gunicorn (PID: $PID)."
-        fi
-    else
-        echo "PID file not found. Is Gunicorn running?"
-    fi
-}
-
-# Execute the reload function
-reload_gunicorn
+pgrep -f gunicorn | xargs kill -HUP
