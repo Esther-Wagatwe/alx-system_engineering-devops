@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script sends a HUP signal to Gunicorn for a graceful reload
+
+# Find the PID of the Gunicorn master process using pgrep
+GUNICORN_PID=$(pgrep -f '[g]unicorn.*web_flask')
+
+if [[ -z "$GUNICORN_PID" ]]; then
+    echo "Gunicorn master process not found. Exiting."
+    exit 1
+fi
+
+# Send HUP signal to Gunicorn master process for graceful reload
+echo "Sent HUP signal to Gunicorn (PID: $GUNICORN_PID) for graceful reload"
+kill -HUP "$GUNICORN_PID"
+
+echo "Gunicorn (PID: $GUNICORN_PID) successfully reloaded."
